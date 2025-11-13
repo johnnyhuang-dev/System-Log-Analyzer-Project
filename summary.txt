@@ -1,0 +1,3 @@
+[2025-11-12 10:00:00] INFO: System started
+[2025-11-12 10:20:32] WARNING: Low disk space
+[2025-11-12 10:25:10] ERROR: Disk read failure
