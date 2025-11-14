@@ -24,7 +24,17 @@ def main():
     """Main function to run the analyzer and summarize logs"""
     logs = read_log("system_logs.txt")
     print(logs)
+    for i in range(len(logs)):
+        logs[i].split()
+    print(logs)
     write_summary("summary.txt", logs)
+
+    a = ["a b c", "d e f", "g h i"]
+    for i in range(len(a)):
+        a[i].split(" ")
+        print(a[i])
+    print(a)
+    print(a[0][1])
 
 if __name__ == "__main__":
     main()
