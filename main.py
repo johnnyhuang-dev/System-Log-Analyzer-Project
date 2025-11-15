@@ -13,28 +13,31 @@ def read_log(log_file):
         infile.close()
     return logs
 
+def get_log_type(log):
+    no_date_log = (log.split("] "))[1]
+    log_sections = no_date_log.split(":")
+    log_type = log_sections[0]
+    print(log_type)
+    return log_type
+
 def write_summary(summary_file, logs):
     """Function for summarizing the system's logs into a txt file"""
+
     outfile = open(summary_file, "w")
     for i in logs:
-        outfile.write(i + "\n")
+        log_type = get_log_type(i)
+        outfile.write(log_type)
+        outfile.write("\n")
     outfile.close()
 
 def main():
     """Main function to run the analyzer and summarize logs"""
+    
     logs = read_log("system_logs.txt")
+    
     print(logs)
-    for i in range(len(logs)):
-        logs[i].split()
-    print(logs)
-    write_summary("summary.txt", logs)
 
-    a = ["a b c", "d e f", "g h i"]
-    for i in range(len(a)):
-        a[i].split(" ")
-        print(a[i])
-    print(a)
-    print(a[0][1])
+    write_summary("summary.txt", logs)
 
 if __name__ == "__main__":
     main()
