@@ -28,14 +28,32 @@ def log_elements_list(log):
     print(log_elements)
     return log_elements
 
-def write_summary(summary_file, logs):
-    """Summarizes the system's logs into a txt file"""
-
-    outfile = open(summary_file, "w")
+def count_log_types(logs):
+    """Counts how many of each type of log were recorded"""
+    info_count = 0
+    error_count = 0
+    warning_count = 0
+    
     for line in logs:
         log_type = log_elements_list(line)[2]
-        outfile.write(log_type)
-        outfile.write("\n")
+        if log_type == "INFO":
+            info_count += 1
+        elif log_type == "ERROR":
+            error_count += 1
+        elif log_type == "WARNING":
+            warning_count += 1
+    
+    counts = [info_count, error_count, warning_count]
+
+    return counts
+
+def write_summary(summary_file, logs):
+    """Summarizes the system's logs into a txt file"""
+    outfile = open(summary_file, "w")
+    counts = count_log_types(logs)
+    outfile.write(f"INFO: {counts[0]}\n")
+    outfile.write(f"ERROR: {counts[1]}\n")
+    outfile.write(f"WARNING: {counts[2]}\n")
     outfile.close()
 
 def main():
