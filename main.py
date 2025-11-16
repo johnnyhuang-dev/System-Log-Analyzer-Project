@@ -3,7 +3,7 @@
 #txt files contain example system logs
 
 def read_log(log_file):
-    """Function to read each log and store it in a list"""
+    """Reads each log in the system's logs txt file and stores it in array"""
     logs = []
     with open(log_file, "r") as infile:
         log = infile.readline().strip()
@@ -13,19 +13,27 @@ def read_log(log_file):
         infile.close()
     return logs
 
-def get_log_type(log):
-    no_date_log = (log.split("] "))[1]
-    log_sections = no_date_log.split(":")
-    log_type = log_sections[0]
-    print(log_type)
-    return log_type
+def log_elements_list(log):
+    """Takes in log line and splits it into its components/elements"""
+    date_time = (log.split("] ")[0]).split()
+    date = date_time[0].replace("[", "")
+    time = date_time[1]
+
+    name_msg = (log.split("] ")[1]).split(": ")
+    name = name_msg[0]
+    message = name_msg[1]
+
+    log_elements = [date, time, name, message]
+    
+    print(log_elements)
+    return log_elements
 
 def write_summary(summary_file, logs):
-    """Function for summarizing the system's logs into a txt file"""
+    """Summarizes the system's logs into a txt file"""
 
     outfile = open(summary_file, "w")
-    for i in logs:
-        log_type = get_log_type(i)
+    for line in logs:
+        log_type = log_elements_list(line)[2]
         outfile.write(log_type)
         outfile.write("\n")
     outfile.close()
