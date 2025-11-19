@@ -1,3 +1,9 @@
-INFO: 1
+NUMBER OF LOGS PER TYPE
+INFO: 2
 ERROR: 1
-WARNING: 1
+WARNING: 2
+
+POTENTIAL THREATS DETECTED
+Potential Threats were detected in the following logs: 
+[2025-11-12 10:00:05] WARNING: Unauthorized login
+[2025-11-12 10:00:08] ERROR: Unsuccessful port access

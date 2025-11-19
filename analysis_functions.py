@@ -33,3 +33,18 @@ def count_log_types(logs):
     counts = [info_count, error_count, warning_count]
 
     return counts
+
+def detect_threat(logs):
+    """Takes in list of logs and checks which logs contain potential 
+    threats by performing threat keyword detection on each log,
+    then returns array of logs signaling potential threats."""
+
+    threat_keywords = ["error", "fail", "denied", "unauthorized", "malware", "attack"]
+    threat_logs = []
+
+    for log in logs:
+        for word in threat_keywords:
+            if word in log.lower():
+                threat_logs.append(log)
+
+    return threat_logs
