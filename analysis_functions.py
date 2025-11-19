@@ -12,7 +12,6 @@ def log_elements_list(log):
 
     log_elements = [date, time, name, message]
     
-    print(log_elements)
     return log_elements
 
 def count_log_types(logs):

@@ -30,19 +30,29 @@ def write_summary(summary_file, logs):
     if threat_logs == []:
         outfile.write("0 Threats Detected.")
     else:
-        outfile.write("Potential Threats were detected in the following logs: \n")
+        outfile.write("The following logs may signal potential threats: \n")
         for log in threat_logs:
             outfile.write(f"{log}\n")
     outfile.close()
 
 def main():
     """Main function to run the analyzer and summarize logs"""
+    print("\nSimple Log Analyzer\n")
+    print("Please upload the system logs to analyze in the \"uploaded_logs.txt\" file.")
+    is_valid = False
+    while is_valid == False:
+        ready = input("Ready to proceed? (Enter y or n): ").strip()
+        if ready == "y" or ready == "Y":
+            logs = read_log("uploaded_logs.txt")
+            write_summary("summary.txt", logs)
+            print("\nYour log summary has been completed.")
+            print("Please proceed to and open the \"summary.txt\" file.")
+            is_valid = True
+        elif ready == "n" or ready == "N":
+            print("\nPlease restart the program once your logs are uploaded to the \"uploaded_logs.txt\" file.")
+            is_valid = True
+        else:
+            print("\nPlease enter a \'y\' or \'n\' character.")
     
-    logs = read_log("system_logs.txt")
-    
-    print(logs)
-
-    write_summary("summary.txt", logs)
-
 if __name__ == "__main__":
     main()

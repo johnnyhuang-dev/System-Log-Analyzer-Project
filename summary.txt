@@ -4,6 +4,6 @@ ERROR: 1
 WARNING: 2
 
 POTENTIAL THREATS DETECTED
-Potential Threats were detected in the following logs: 
+The following logs may signal potential threats: 
 [2025-11-12 10:00:05] WARNING: Unauthorized login
 [2025-11-12 10:00:08] ERROR: Unsuccessful port access
