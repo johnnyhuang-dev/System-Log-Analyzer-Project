@@ -1,0 +1,5 @@
+[2025-11-12 10:00:01] INFO: System started
+[2025-11-12 10:00:05] WARNING: Unauthorized login
+[2025-11-12 10:00:08] ERROR: Unsuccessful port access
+[2025-11-12 10:00:15] INFO: User log in successful
+[2025-11-12 10:01:20] WARNING: Low disk space
