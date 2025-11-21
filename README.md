@@ -5,18 +5,6 @@
 
 **WatIAM**: j673huan
 
-**Notes to TA:** Replace this text with any important notes to the TA 
-about your work.  **If you have nothing to say, delete
-this text.**
-
-Complete the following sections.  You "sign" your name by 
-typing it in below.  **Failure to sign will result in a significant 
-loss of points.** Remove this comment after signing.
-
-**Do not delete these sections. If you received no help, etc. then
-say so in your acknowledgement.  You should provide an answer
-for each section.** Remove this comment once done.
-
 Acknowledgment of Receiving Assistance or Use of Others' Ideas
 --------------------------------------------------------------
 I received the following help, assistance, or any ideas from 
@@ -24,7 +12,8 @@ classmates, other knowledgeable people, books or non-course
 websites (please include a description of discussions with 
 the TA or the instructor):
 
-
+I received no help from anybody, except a website to learn more about split().  
+ https://www.w3schools.com/python/ref_string_split.asp
 
 
 Record of Giving Assistance to Others
@@ -33,7 +22,7 @@ I gave the following help, assistance, or ideas to the following
 classmates (please describe what assistance to whom was given 
 by you):
 
-
+I gave no help to anybody.
 
 Declaration
 -----------
