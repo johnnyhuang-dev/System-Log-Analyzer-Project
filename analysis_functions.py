@@ -2,13 +2,13 @@
 
 def log_elements_list(log):
     """Takes in log line and splits it into its components/elements"""
-    date_time = (log.split("] ")[0]).split()
+    date_time = (log.split("]", 1)[0]).split()
     date = date_time[0].replace("[", "")
-    time = date_time[1]
+    time = date_time[1].strip()
 
-    name_msg = (log.split("] ")[1]).split(": ")
-    name = name_msg[0]
-    message = name_msg[1]
+    name_msg = (log.split("]", 1)[1]).split(":", 1)
+    name = name_msg[0].strip()
+    message = name_msg[1].strip()
 
     log_elements = [date, time, name, message]
     
@@ -20,6 +20,9 @@ def count_log_types(logs):
     error_count = 0
     warning_count = 0
     
+    if logs == []:
+        return [0,0,0]
+
     for line in logs:
         log_type = log_elements_list(line)[2]
         if log_type == "INFO":
@@ -41,9 +44,15 @@ def detect_threat(logs):
     threat_keywords = ["error", "fail", "denied", "unauthorized", "malware", "attack"]
     threat_logs = []
 
+    if logs == []:
+        return threat_logs
+    
     for log in logs:
         for word in threat_keywords:
             if word in log.lower():
                 threat_logs.append(log)
+                break
+    
+    print(threat_logs)
 
     return threat_logs

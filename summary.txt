@@ -1,9 +1,9 @@
 NUMBER OF LOGS PER TYPE
-INFO: 2
+INFO: 0
 ERROR: 1
-WARNING: 2
+WARNING: 0
 
 POTENTIAL THREATS DETECTED
 The following logs may signal potential threats: 
-[2025-11-12 10:00:05] WARNING: Unauthorized login
-[2025-11-12 10:00:08] ERROR: Unsuccessful port access
+[2024-09-08 09:01:02] ERROR: Unauthorized access attempt
+[2024-09-08 09:01:02] ERROR: Unauthorized access attempt
